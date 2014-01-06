@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+	   <form-bean name="helloWorldForm"	type="com.struts1.sample.form.HelloWorldForm" />
+	   <form-bean name="dispatchForm" type="com.struts1.sample.form.DispatchForm" />
+	</form-beans>
+ 	
+ 	<global-exceptions>
+      	<exception type="java.lang.NullPointerException" path="globalError.page"></exception>
+    </global-exceptions>
+    
+	<action-mappings>
+	 
+	   <action path="/helloWorld" type="com.struts1.sample.HelloWorldAction" name="helloWorldForm" scope="session" input="login.page">
+			<exception type="java.lang.NullPointerException" path="error.page"></exception>
+			<forward name="success" path="success.page"/>
+			<forward name="failed" path="/failure.jsp"/>
+	   </action>
+	   
+        <action path="/dispatchActionSample" type="com.struts1.sample.DispatchActionSample" name="dispatchForm" parameter="method" scope="session">
+            <forward name="success" path="lookupDispatch.page" />
+            <forward name="error" path="/error.jsp"></forward>
+        </action>
+        
+        <!-- example of ForwardAction -->
+        <action path="/forwardAction" type="org.apache.struts.actions.ForwardAction" parameter="forward.page"></action>
+        <action path="/loginPage" type="org.apache.struts.actions.ForwardAction" parameter="login.page"></action>
+        <action path="/lookupDispatchPage" type="org.apache.struts.actions.ForwardAction" parameter="lookupDispatch.page"></action>
+        <!-- End example of ForwardAction -->
+        
+    </action-mappings>
+    
+	<message-resources parameter="MessageResources" null="false"></message-resources>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+		<set-property property="definitions-config" value="/WEB-INF/struts-tiles/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+		<!-- <set-property property="definitions-parser-details" value="2" />
+		<set-property property="definitions-parser-validate" value="true" /> -->
+	</plug-in>
+	<!-- Struts Spring Integration
+	 <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="/WEB-INF/springContext.xml" />
+  	</plug-in> -->
+</struts-config>

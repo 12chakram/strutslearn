@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+      xmlns:context="http://www.springframework.org/schema/context">
+
+	<!-- <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver" />
+		<property name="url" value="jdbc:jtds:sqlserver://172.24.2.38:1433;databaseName=MOZART_BASELINE_QA_20130106" />
+		<property name="username" value="sls_usr2" />
+		<property name="password" value="overture" />
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+	<bean id="executeQry" class="com.cg.springjdbc.query.ExecuteQuery">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean> -->
+	<bean id="employee" class="com.hibernate.pojo.Employee"/>
+	<bean id="empServiceFactory" class="com.employee.service.factory.EmployeeServiceFactory">
+		<property name="employeeService" ref="empServiceImpl"></property>
+		<property name="textMessage" value="Done with setter injection"></property>
+	</bean>
+	<bean id="empServiceImpl" class="com.employee.service.impl.EmployeeServiceImpl"></bean>
+	
+ 	<bean id="id1" class="com.spring.aop.example.MyImplClass" />
+ 	<bean id="id2" class="com.spring.aop.example.MyWelcomeAdvice" />
+ 	<bean id="id3" class="com.spring.aop.example.MyAfterAdvice" />
+ 	<bean id="id4" class="org.springframework.aop.framework.ProxyFactoryBean">
+  		<property name="proxyInterfaces" value="com.spring.aop.example.MyInterFaceEx" />
+      	<property name="interceptorNames" >
+                  <list>
+                       <value>id2</value>
+                       <value>id3</value>
+                   </list>
+       </property>
+       <property name="target">
+               <ref bean="id1"/>       
+       </property>     
+ 	</bean>
+	
+</beans>
