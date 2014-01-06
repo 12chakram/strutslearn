@@ -50,8 +50,7 @@ public class HelloWorldForm extends ActionForm{
 	}
 	
 	@Override
-	public ActionErrors validate(ActionMapping mapping,
-			HttpServletRequest request) {
+	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request) {
 		ActionErrors errors =null;
 		if(null==message || "".equals(message)){
 			 errors =  new ActionErrors();

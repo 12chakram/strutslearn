@@ -2,7 +2,6 @@
 <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
-<jsp:useBean id="helloWorldForm" class="com.struts1.sample.form.HelloWorldForm" scope="request"/>
 <html>
     <head>
         <title>Animated Form Switching with jQuery</title>
@@ -20,12 +19,13 @@
 			Cufon.replace('.back');
 		</script>
     </head>
-    <html:form action="/helloWorld" enctype="multipart/form-data">
     <body>
 		<div class="wrapper">
+			<h1>Animated Form Switching</h1>
+			<h2>Demo: click the <span>orange links</span> to see the form animating and switching</h2>
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
-					<form class="register">
+					<form class="register active">
 						<h3>Register</h3>
 						<div class="column">
 							<div>
@@ -67,26 +67,26 @@
 								<span>Send me updates</span>
 							</div>
 							<input type="submit" value="Register" />
-							<a href="index.jsp" rel="login" class="linkform">You have an account already? Log in here</a>
+							<a href="login.jsp" rel="login" class="linkform">You have an account already? Log in here</a>
 							<div class="clear"></div>
 						</div>
 					</form>
-					<form class="login active">
+					<form class="login">
 						<h3>Login</h3>
 						<div>
 							<label>Username:</label>
-							<html:text property="message" name="helloWorldForm"></html:text><html:errors/>
+							<input type="text" />
 							<span class="error">This is an error</span>
 						</div>
 						<div>
 							<label>Password: <a href="forgot_password.html" rel="forgot_password" class="forgot linkform">Forgot your password?</a></label>
-							<<html:text property="message" name="helloWorldForm"></html:text><html:errors/>
+							<input type="password" />
 							<span class="error">This is an error</span>
 						</div>
 						<div class="bottom">
 							<div class="remember"><input type="checkbox" /><span>Keep me logged in</span></div>
 							<input type="submit" value="Login"></input>
-							<a href="register.jsp" rel="register" class="linkform">You don't have an account yet? Register here</a>
+							<a href="register.html" rel="register" class="linkform">You don't have an account yet? Register here</a>
 							<div class="clear"></div>
 						</div>
 					</form>
@@ -107,6 +107,7 @@
 				</div>
 				<div class="clear"></div>
 			</div>
+			<a class="back" href="http://tympanus.net/codrops/2011/01/06/animated-form-switching/">back to the Codrops tutorial</a>
 		</div>
 		
 
@@ -186,5 +187,4 @@
 			});
         </script>
     </body>
-    </html:form>
 </html>

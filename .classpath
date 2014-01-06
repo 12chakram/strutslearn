@@ -21,7 +21,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/oro-2.0.8.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard-1.0.6.jar"/>
-	<classpathentry kind="lib" path="D:/Struts/jakarta-struts-1.2.4-lib/struts.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Java/jdk1.6.0_18/lib/tools.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/asm-3.1.jar"/>
@@ -60,5 +59,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/struts.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aopalliance-alpha1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/cglib-nodep-2.2.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.9.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

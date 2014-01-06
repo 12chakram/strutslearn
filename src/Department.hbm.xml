@@ -8,7 +8,7 @@
     <class name="com.hibernate.pojo.Department" table="DEPARTMENT">
  
         <id name="departmentId" type="java.lang.Long" column="DEPARTMENT_ID" >
-            <generator class="sequence" />
+            
         </id>
          
         <property name="departmentName" column="DEPT_NAME"/>

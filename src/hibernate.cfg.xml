@@ -5,22 +5,19 @@
 
 <hibernate-configuration>
 	<session-factory>
-	  <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-	  <property name="connection.driver_class">org.postgresql.Driver</property>
-	  <property name="connection.url">jdbc:postgresql://localhost:5432/sampleDb</property>
-	  <property name="connection.username">postgres</property>
-	  <property name="connection.password">Password@1</property>
+	<property name="show_sql">true</property>
+  	<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  	<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/world</property>
+	<property name="hibernate.connection.autocommit">false</property>
+ 	<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  	<property name="hibernate.connection.username">learn</property>
+  	<property name="hibernate.connection.password">learn</property>
 	  
-	  <property name="hibernate.hbm2ddl.auto">update</property>
-	  <property name="show_sql">true</property>
-	   <mapping resource="Employee.hbm.xml"/>
+	  <property name="hibernate.hbm2ddl.auto">create</property>
+	
+	  <mapping resource="Employee.hbm.xml"/>
 	  <mapping resource="Department.hbm.xml"/>
-	 <!-- Mapping files 
-	  <mapping resource="student.hbm.xml"/>
-	  <mapping resource="course.hbm.xml"/>
-	 -->
-	  <!-- <mapping resource="Borrower.hbm.xml"/>
-	  <mapping resource="DocMatter.hbm.xml"/>
-	   <mapping resource="DocContent.hbm.xml"/> -->
+	   <mapping resource="User.hbm.xml"/>
+
 	</session-factory>
 </hibernate-configuration>

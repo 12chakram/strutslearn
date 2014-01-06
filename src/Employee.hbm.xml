@@ -7,7 +7,7 @@
  
     <class name="com.hibernate.pojo.Employee" table="EMPLOYEE">
         <id name="employeeId" column="EMPLOYEE_ID">
-            <generator class="sequence" />
+            <generator class="assigned" />
         </id>
  
         <property name="firstname" />
