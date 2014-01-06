@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
@@ -56,8 +57,12 @@
 				<li><a class="codrops-icon codrops-icon-drop" href="http://javabrains.koushik.org/courses.html"><span>GO TO THE Java Brains</span></a></li>
 			</ul>
 			<header>
-				<h1>Google Nexus Website Menu <span>A sidebar menu as seen on the <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> page</span></h1>	
+			  <div style=" margin-left: 15%;
+    margin-top: -14.5%;">
+			    <jsp:include page="login.jsp"></jsp:include>
+			   </div> 
 			</header> 
+			
 		</div><!-- /container -->
 		<script src="js/classie.js"></script>
 		<script src="js/gnmenu.js"></script>

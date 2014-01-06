@@ -11,6 +11,7 @@
         <meta name="keywords" content="expand, form, css3, jquery, animate, width, height, adapt, unobtrusive javascript"/>
 		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
 		<script src="js/cufon-yui.js" type="text/javascript"></script>
 		<script src="js/ChunkFive_400.font.js" type="text/javascript"></script>
 		<script type="text/javascript">
@@ -20,12 +21,11 @@
 			Cufon.replace('.back');
 		</script>
     </head>
-    <html:form action="/helloWorld" enctype="multipart/form-data">
     <body>
 		<div class="wrapper">
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
-					<form class="register">
+					<html:form action="/helloWorld" enctype="multipart/form-data" styleClass="register">
 						<h3>Register</h3>
 						<div class="column">
 							<div>
@@ -67,11 +67,11 @@
 								<span>Send me updates</span>
 							</div>
 							<input type="submit" value="Register" />
-							<a href="index.jsp" rel="login" class="linkform">You have an account already? Log in here</a>
+							<a href="login.jsp" rel="login" class="linkform">You have an account already? Log in here</a>
 							<div class="clear"></div>
 						</div>
-					</form>
-					<form class="login active">
+					</html:form>
+					<html:form action="/helloWorld" enctype="multipart/form-data" styleClass="login active">
 						<h3>Login</h3>
 						<div>
 							<label>Username:</label>
@@ -80,7 +80,7 @@
 						</div>
 						<div>
 							<label>Password: <a href="forgot_password.html" rel="forgot_password" class="forgot linkform">Forgot your password?</a></label>
-							<<html:text property="message" name="helloWorldForm"></html:text><html:errors/>
+							<html:text property="message" name="helloWorldForm"></html:text><html:errors/>
 							<span class="error">This is an error</span>
 						</div>
 						<div class="bottom">
@@ -89,7 +89,7 @@
 							<a href="register.jsp" rel="register" class="linkform">You don't have an account yet? Register here</a>
 							<div class="clear"></div>
 						</div>
-					</form>
+					</html:form>
 					<form class="forgot_password">
 						<h3>Forgot Password</h3>
 						<div>
@@ -186,5 +186,5 @@
 			});
         </script>
     </body>
-    </html:form>
+   
 </html>

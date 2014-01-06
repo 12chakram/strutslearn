@@ -31,7 +31,7 @@ p{
 	padding:5px 0px;
 }
 .wrapper{
-	width:960px;
+	/* width:960px; */
 	margin:20px auto;
 	min-height:550px;
 }
@@ -64,6 +64,7 @@ a.back{
 	-moz-box-shadow:1px 1px 7px #ccc;
 	-webkit-box-shadow:1px 1px 7px #ccc;
 	box-shadow:1px 1px 7px #ccc;
+	margin-left: 35%;
 }
 .form_wrapper h3{
 	padding:20px 30px 20px 30px;
@@ -84,7 +85,7 @@ form.active{
 	display:block;
 }
 form.login{
-	width:350px;
+	width:495px;
 }
 form.register{
 	width:550px;
