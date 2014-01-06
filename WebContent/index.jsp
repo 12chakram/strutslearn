@@ -57,8 +57,7 @@
 				<li><a class="codrops-icon codrops-icon-drop" href="http://javabrains.koushik.org/courses.html"><span>GO TO THE Java Brains</span></a></li>
 			</ul>
 			<header>
-			  <div style=" margin-left: 15%;
-    margin-top: -14.5%;">
+			  <div style=" margin-left: 15%;margin-top: -14.5%;">
 			    <jsp:include page="login.jsp"></jsp:include>
 			   </div> 
 			</header> 

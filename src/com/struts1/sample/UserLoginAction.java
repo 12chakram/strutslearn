@@ -9,13 +9,13 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.employee.service.factory.EmployeeServiceFactory;
 import com.spring.context.ApplicationContextBean;
-import com.struts1.sample.form.HelloWorldForm;
+import com.struts1.sample.form.LoginForm;
 
-public class HelloWorldAction extends Action{
+
+public class UserLoginAction extends Action{
 	
 	public ActionForward execute(ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response)
@@ -24,8 +24,8 @@ public class HelloWorldAction extends Action{
 			ApplicationContext context;
 			/*String x = null;
 		      x = x.substring(0);*/
-			HelloWorldForm helloWorldForm = (HelloWorldForm) form;
-			System.out.println("Name : "+helloWorldForm.getMessage());
+			LoginForm loginForm = (LoginForm) form;
+			System.out.println("Name : "+loginForm.getUserName());
 			System.out.println("Locale: "+request.getSession().getAttribute(Globals.LOCALE_KEY));
 			/*context = (ApplicationContext) request.getSession().getServletContext();
 			Employee employee = (Employee) context.getBean("employee");
@@ -37,7 +37,7 @@ public class HelloWorldAction extends Action{
 			System.out.println("Locale 2: "+request.getSession().getAttribute(Globals.LOCALE_KEY));*/
 			EmployeeServiceFactory empService = (EmployeeServiceFactory) context.getBean("empServiceFactory");
 			System.out.println("TxtMsg; "+empService.getTextMessage());
-			helloWorldForm.setEmpList(empService.geEmployeeService().getEmployeeDetails());
+			loginForm.setEmpList(empService.geEmployeeService().getEmployeeDetails());
 			return mapping.findForward(forward);
 			
 		}

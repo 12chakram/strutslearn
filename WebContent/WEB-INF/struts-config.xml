@@ -5,7 +5,7 @@
 <struts-config>
 
 	<form-beans>
-	   <form-bean name="helloWorldForm"	type="com.struts1.sample.form.HelloWorldForm" />
+	   <form-bean name="loginForm"	type="com.struts1.sample.form.LoginForm" />
 	   <form-bean name="dispatchForm" type="com.struts1.sample.form.DispatchForm" />
 	</form-beans>
  	
@@ -15,7 +15,7 @@
     
 	<action-mappings>
 	 
-	   <action path="/helloWorld" type="com.struts1.sample.HelloWorldAction" name="helloWorldForm" scope="session" input="login.page">
+	   <action path="/loginForm" type="com.struts1.sample.UserLoginAction" name="loginForm" scope="session" input="login.page">
 			<exception type="java.lang.NullPointerException" path="error.page"></exception>
 			<forward name="success" path="success.page"/>
 			<forward name="failed" path="/failure.jsp"/>

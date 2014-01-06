@@ -2,9 +2,9 @@
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@taglib uri="/WEB-INF/tiles-tlds/struts-tiles.tld" prefix="tiles" %>
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
-<jsp:useBean id="helloWorldForm" class="com.struts1.sample.form.HelloWorldForm" scope="session"/>
+<jsp:useBean id="loginForm" class="com.struts1.sample.form.LoginForm" scope="session"/>
 <html>
-		<h2 style="color:red;">${helloWorldForm.errorMsg}</h2>
+		<h2 style="color:red;">${loginForm.errorMsg}</h2>
 	<bean:message key="errors.title"/><br/>
 	<html:errors/><br/>
 	<logic:messagesPresent>

@@ -2,7 +2,7 @@
 <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
-<jsp:useBean id="helloWorldForm" class="com.struts1.sample.form.HelloWorldForm" scope="request"/>
+<jsp:useBean id="loginForm" class="com.struts1.sample.form.LoginForm" scope="request"/>
 <html>
     <head>
         <title>Animated Form Switching with jQuery</title>
@@ -25,7 +25,7 @@
 		<div class="wrapper">
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
-					<html:form action="/helloWorld" enctype="multipart/form-data" styleClass="register">
+					<html:form action="/loginForm" enctype="multipart/form-data" styleClass="register">
 						<h3>Register</h3>
 						<div class="column">
 							<div>
@@ -71,21 +71,21 @@
 							<div class="clear"></div>
 						</div>
 					</html:form>
-					<html:form action="/helloWorld" enctype="multipart/form-data" styleClass="login active">
+					<html:form action="/loginForm" enctype="multipart/form-data" styleClass="login active">
 						<h3>Login</h3>
 						<div>
 							<label>Username:</label>
-							<html:text property="message" name="helloWorldForm"></html:text><html:errors/>
+							<html:text property="userName" name="loginForm" style="width:75%;"></html:text><html:errors/>
 							<span class="error">This is an error</span>
 						</div>
 						<div>
 							<label>Password: <a href="forgot_password.html" rel="forgot_password" class="forgot linkform">Forgot your password?</a></label>
-							<html:text property="message" name="helloWorldForm"></html:text><html:errors/>
+							<html:password property="password" name="loginForm" style="width:75%;"></html:password><html:errors/>
 							<span class="error">This is an error</span>
 						</div>
 						<div class="bottom">
 							<div class="remember"><input type="checkbox" /><span>Keep me logged in</span></div>
-							<input type="submit" value="Login"></input>
+							<html:submit  value="Login"></html:submit>
 							<a href="register.jsp" rel="register" class="linkform">You don't have an account yet? Register here</a>
 							<div class="clear"></div>
 						</div>
