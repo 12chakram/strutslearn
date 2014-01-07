@@ -20,7 +20,7 @@
 					<th>Last Name</th>
 					<th>Cell</th>
 				</tr>
-				<logic:iterate id="empList" name="helloWorldForm" property="empList" type="com.hibernate.pojo.Employee">
+				<logic:iterate id="empList" name="loginForm" property="empList" type="com.hibernate.pojo.Employee">
 				<tr>
 					<td>${empList.employeeId}</td>
 					<td>${empList.firstname}</td>

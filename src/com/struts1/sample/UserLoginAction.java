@@ -11,6 +11,8 @@ import org.apache.struts.action.ActionMapping;
 import org.springframework.context.ApplicationContext;
 
 import com.employee.service.factory.EmployeeServiceFactory;
+import com.employee.service.impl.UserLoginServiceBean;
+import com.hibernate.pojo.User;
 import com.spring.context.ApplicationContextBean;
 import com.struts1.sample.form.LoginForm;
 
@@ -25,6 +27,7 @@ public class UserLoginAction extends Action{
 			/*String x = null;
 		      x = x.substring(0);*/
 			LoginForm loginForm = (LoginForm) form;
+			
 			System.out.println("Name : "+loginForm.getUserName());
 			System.out.println("Locale: "+request.getSession().getAttribute(Globals.LOCALE_KEY));
 			/*context = (ApplicationContext) request.getSession().getServletContext();
@@ -35,6 +38,15 @@ public class UserLoginAction extends Action{
 			 * System.out.println("Locale 1: "+request.getSession().getAttribute(Globals.LOCALE_KEY));
 			request.getSession().setAttribute(Globals.LOCALE_KEY, Locale.FRANCE);
 			System.out.println("Locale 2: "+request.getSession().getAttribute(Globals.LOCALE_KEY));*/
+			
+			UserLoginServiceBean loginService = (UserLoginServiceBean) context.getBean("loginService");
+			
+			User logedInUser = loginService.doLogin(loginForm.getUserName(), loginForm.getPassword());
+			
+			if(logedInUser!=null){
+				loginForm.setUserName(logedInUser.getUserName());
+				loginForm.setEmail(logedInUser.getEmail());
+			}
 			EmployeeServiceFactory empService = (EmployeeServiceFactory) context.getBean("empServiceFactory");
 			System.out.println("TxtMsg; "+empService.getTextMessage());
 			loginForm.setEmpList(empService.geEmployeeService().getEmployeeDetails());

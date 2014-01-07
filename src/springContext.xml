@@ -17,6 +17,8 @@
 	<bean id="executeQry" class="com.cg.springjdbc.query.ExecuteQuery">
 		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 	</bean> -->
+	
+	
 	<bean id="employee" class="com.hibernate.pojo.Employee"/>
 	<bean id="empServiceFactory" class="com.employee.service.factory.EmployeeServiceFactory">
 		<property name="employeeService" ref="empServiceImpl"></property>
@@ -24,79 +26,7 @@
 	</bean>
 	<bean id="empServiceImpl" class="com.employee.service.impl.EmployeeServiceImpl"></bean>
 	
-	<!-- <bean id="id1" class="com.spring.aop.example.MyImplClass" />
- 	<bean id="id2" class="com.spring.aop.example.MyWelcomeAdvice" />
- 	<bean id="id3" class="com.spring.aop.example.MyAfterAdvice" />
- 	<bean id="id4" class="org.springframework.aop.framework.ProxyFactoryBean">
-  		<property name="proxyInterfaces" value="com.spring.aop.example.MyInterFaceEx" />
-      	<property name="interceptorNames" >
-                  <list>
-                       <value>id2</value>
-                       <value>id3</value>
-                   </list>
-       </property>
-       <property name="target">
-               <ref bean="id1"/>       
-       </property>     
- 	</bean>
- 	<bean id="myThrowsImpl" class="com.spring.aop.throwsex.MyImplClass"/>
- 	<bean id="myThrowsAdvice" class="com.spring.aop.throwsex.MyThrowsAdvice"/>
- 	<bean id="throwsInter" class="org.springframework.aop.framework.ProxyFactoryBean">
-	    <property name="proxyInterfaces" value="com.spring.aop.throwsex.MyThrowsInterface" />
-    	<property name="interceptorNames" >
-	        <list>
-	        	<value>myThrowsAdvice</value>
-	        </list>
-       </property>
-       <property name="target">
-             <ref bean="myThrowsImpl"/>       
-       </property>     
- 	</bean> -->
- 	
- 	<!-- Static Pointcut Example -->
- 	<!-- <bean id="businessImpl" class="com.spring.aop.pointcut.BusinessImpl"></bean>
- 	<bean id="simpleStaticPointcut" class="com.spring.aop.pointcut.SimpleStaticPointcut"></bean>
- 	<bean id="businessAdvice" class="com.spring.aop.pointcut.BusinessAdvice"></bean>
- 	<bean id="staticProxyFactory" class="org.springframework.aop.framework.ProxyFactoryBean">
- 		<property name="proxyInterfaces" value="com.spring.aop.pointcut.BusinessService"></property>
- 		<property name="interceptorNames">
- 			<list>
- 				<value>customerAdvisor</value>
- 			</list>
- 		</property>
- 		<property name="target" ref="businessImpl"></property>
- 	</bean>
- 	<bean id="customerPointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
-		<property name="mappedName" value="doSomeThing" />
-	</bean>
-	<bean id="customerAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
-		<property name="pointcut" ref="customerPointcut" />
-		<property name="advice" ref="advisorId" />
-	</bean>
- 	<bean id="advisorId" name="org.springframework.aop.Advisor">
- 		<property name="advice" ref="businessAdvice"></property>
- 	</bean> -->
- 	
- 	<!-- pointcut package 2 -->
- 	<!-- <bean id="customerService" class="com.spring.aop.pointcut2.CustomerService">
-		<property name="name" value="Yong Mook Kim" />
-		<property name="url" value="http://www.mkyong.com" />
-	</bean>
-	<bean id="hijackAroundMethodBeanAdvice" class="com.spring.aop.pointcut2.HijackAroundMethod" />
-	<bean id="customerServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
-		<property name="target" ref="customerService" />
-		<property name="interceptorNames">
-			<list>
-				<value>customerAdvisor</value>
-			</list>
-		</property>
-	</bean>
-	<bean id="customerPointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
-		<property name="mappedName" value="printName" />
-	</bean>
- 
-	<bean id="customerAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
-		<property name="pointcut" ref="customerPointcut" />
-		<property name="advice" ref="hijackAroundMethodBeanAdvice" />
-	</bean> -->
+	
+	<bean id="loginService" class="com.employee.service.impl.UserLoginServiceBean" ></bean>
+	
 </beans>
