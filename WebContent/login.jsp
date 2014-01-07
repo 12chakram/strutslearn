@@ -181,10 +181,9 @@
 				which form was submited, and give the class active 
 				to the form you want to show
 				*/
-				$form_wrapper.find('input[type="submit"]')
-							 .click(function(e){
+			/* 	$form_wrapper.find('input[type="submit"]').click(function(e){
 								e.preventDefault();
-							 });	
+							 });	 */
 			});
         </script>
     </body>
