@@ -5,9 +5,8 @@
  
 <hibernate-mapping>
  
-    <class name="com.hibernate.pojo.User" table="USERS">
+    <class name="com.hibernate.pojo.User" table="users">
         <id name="id" column="user_id">
-            
         </id>
  
         <property name="userName" column="user_name"/>
