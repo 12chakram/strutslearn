@@ -5,8 +5,6 @@
 <jsp:useBean id="loginForm" class="com.struts1.sample.form.LoginForm" scope="session"/>
 	<center>
 		<div>
-			Logged in Successfully<br/>
-			<h4>${loginForm.userName}</h4><br/>
 			<html:link action="/forwardAction.do" style="float:right;">
 				Click here to forward to forward.jsp page
 			</html:link><br/>

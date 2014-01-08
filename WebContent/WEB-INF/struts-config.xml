@@ -21,6 +21,12 @@
 			<forward name="failed" path="/failure.jsp"/>
 	   </action>
 	   
+	   <action path="/logout" type="com.struts1.sample.UserLogoutAction">
+			<exception type="java.lang.NullPointerException" path="error.page"></exception>
+			<forward name="success" path="/index.jsp"/>
+			<forward name="failed" path="/failure.jsp"/>
+	   </action>
+	   
         <action path="/dispatchActionSample" type="com.struts1.sample.DispatchActionSample" name="dispatchForm" parameter="method" scope="session">
             <forward name="success" path="lookupDispatch.page" />
             <forward name="error" path="/error.jsp"></forward>
