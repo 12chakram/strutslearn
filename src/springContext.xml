@@ -27,13 +27,13 @@
 	<bean id="empServiceImpl" class="com.employee.service.impl.EmployeeServiceImpl"></bean>
 	
 	
-	<bean id="loginService" class="com.employee.service.impl.UserLoginServiceBean">
-	  <property name="jpaUserManager" ref="jpaUserManager"></property>
+	<bean id="userService" class="com.employee.service.impl.UserServiceBean">
+	  <property name="userManager" ref="userManager"></property>
 	</bean>
 	
 	
 	<!--  DAO bean -->
 	
-	<bean id="jpaUserManager" class="com.dao.impl.JPAUserManager"></bean>
+	<bean id="userManager" class="com.dao.impl.UserManagerBean"></bean>
 	
 </beans>

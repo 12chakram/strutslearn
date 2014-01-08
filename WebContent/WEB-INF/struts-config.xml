@@ -6,6 +6,7 @@
 
 	<form-beans>
 	   <form-bean name="loginForm"	type="com.struts1.sample.form.LoginForm" />
+	    <form-bean name="userRegisterForm"	type="com.struts1.sample.form.UserRegisterForm" />
 	   <form-bean name="dispatchForm" type="com.struts1.sample.form.DispatchForm" />
 	</form-beans>
  	
@@ -31,6 +32,13 @@
             <forward name="success" path="lookupDispatch.page" />
             <forward name="error" path="/error.jsp"></forward>
         </action>
+        
+        
+         <action path="/userRegisterForm" type="com.struts1.sample.UserDispatchAction" name="userRegisterForm" parameter="method" scope="session">
+            <forward name="success" path="lookupDispatch.page"/>
+            <forward name="error" path="/error.jsp"></forward>
+        </action>
+        
         
         <!-- example of ForwardAction -->
         <action path="/forwardAction" type="org.apache.struts.actions.ForwardAction" parameter="forward.page"></action>

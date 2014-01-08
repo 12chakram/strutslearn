@@ -5,6 +5,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>  
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %> 
 <jsp:useBean id="loginForm" class="com.struts1.sample.form.LoginForm" scope="request"/>
+<jsp:useBean id="userRegisterForm" class="com.struts1.sample.form.UserRegisterForm" scope="session"/>
 <html>
     <head>
         <title>Animated Form Switching with jQuery</title>
@@ -27,39 +28,40 @@
 		<div class="wrapper">
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
-					<html:form action="/loginForm" enctype="multipart/form-data" styleClass="register">
+				  <html:form action="/userRegisterForm" enctype="multipart/form-data" styleClass="register">
+				       <bean:write name="userRegisterForm" property="message" />
 						<h3>Register</h3>
 						<div class="column">
 							<div>
 								<label>First Name:</label>
-								<input type="text" />
+								<html:text property="firstName" name="userRegisterForm" style="width:75%;"></html:text><html:errors/>
 								<span class="error">This is an error</span>
 							</div>
 							<div>
 								<label>Last Name:</label>
-								<input type="text" />
+								<html:text property="lastName" name="userRegisterForm" style="width:75%;"></html:text><html:errors/>
 								<span class="error">This is an error</span>
 							</div>
 							<div>
-								<label>Website:</label>
-								<input type="text" value="http://"/>
+								<label>Phone:</label>
+								<html:text property="phone" name="userRegisterForm" style="width:75%;"></html:text><html:errors/>
 								<span class="error">This is an error</span>
 							</div>
 						</div>
 						<div class="column">
 							<div>
 								<label>Username:</label>
-								<input type="text"/>
+								<html:text property="userName" name="userRegisterForm" style="width:75%;"></html:text><html:errors/>
 								<span class="error">This is an error</span>
 							</div>
 							<div>
 								<label>Email:</label>
-								<input type="text" />
+									<html:text property="email" name="userRegisterForm" style="width:75%;"></html:text><html:errors/>
 								<span class="error">This is an error</span>
 							</div>
 							<div>
 								<label>Password:</label>
-								<input type="password" />
+								<html:password property="password" name="loginForm" style="width:75%;"></html:password><html:errors/>
 								<span class="error">This is an error</span>
 							</div>
 						</div>
@@ -68,7 +70,9 @@
 								<input type="checkbox" />
 								<span>Send me updates</span>
 							</div>
-							<input type="submit" value="Register" />
+							 <html:submit property="method">
+							    <bean:message key="userRegisterForm.add"/>
+							  </html:submit>
 							<a href="login.jsp" rel="login" class="linkform">You have an account already? Log in here</a>
 							<div class="clear"></div>
 						</div>

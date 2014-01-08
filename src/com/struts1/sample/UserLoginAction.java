@@ -11,7 +11,7 @@ import org.apache.struts.action.ActionMapping;
 import org.springframework.context.ApplicationContext;
 
 import com.employee.service.factory.EmployeeServiceFactory;
-import com.employee.service.impl.UserLoginServiceBean;
+import com.employee.service.impl.UserServiceBean;
 import com.hibernate.pojo.User;
 import com.spring.context.ApplicationContextBean;
 import com.struts1.sample.form.LoginForm;
@@ -39,7 +39,7 @@ public class UserLoginAction extends Action{
 			request.getSession().setAttribute(Globals.LOCALE_KEY, Locale.FRANCE);
 			System.out.println("Locale 2: "+request.getSession().getAttribute(Globals.LOCALE_KEY));*/
 			
-			UserLoginServiceBean loginService = (UserLoginServiceBean) context.getBean("loginService");
+			UserServiceBean loginService = (UserServiceBean) context.getBean("loginService");
 			
 			User logedInUser = loginService.doLogin(loginForm.getUserName(), loginForm.getPassword());
 			
