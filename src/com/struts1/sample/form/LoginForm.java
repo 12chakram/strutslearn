@@ -6,12 +6,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.struts.Globals;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
-import org.apache.struts.action.ActionMessages;
 
 import com.hibernate.pojo.Employee;
 
@@ -82,13 +80,14 @@ public class LoginForm extends ActionForm{
 
 	@Override
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request) {
-		ActionErrors errors =null;
-		if(StringUtils.isBlank(userName) || StringUtils.isBlank(password)){
-			 errors =  new ActionErrors();
-			 errors.add("usernameErr", new ActionMessage("helloForm.error"));
-			 //request.setAttribute(Globals.ERROR_KEY, errors);
+		ActionErrors errors = new ActionErrors();
+		if (StringUtils.isBlank(userName) || userName.length() < 1) {
+		 errors.add("userName", new ActionMessage("error.userName.required"));
 		}
-		return errors;
+		if (StringUtils.isBlank(password)) {
+	       errors.add("password", new ActionMessage("error.password.required"));
+		}
+	   return errors;
 	}
 	
 	public void clear(){

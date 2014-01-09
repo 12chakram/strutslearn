@@ -77,7 +77,10 @@
 							<div class="clear"></div>
 						</div>
 					</html:form>
-					<html:form action="/loginForm" enctype="multipart/form-data" styleClass="login active">
+					<html:form action="/doLogin" enctype="multipart/form-data" styleClass="login active">
+					 <div style="color:red">
+                           <html:errors />
+                       </div>
 						<h3>Login</h3>
 						<div>
 							<label>Username:</label>
