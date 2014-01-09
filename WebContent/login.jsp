@@ -4,8 +4,10 @@
 
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>  
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %> 
+
 <jsp:useBean id="loginForm" class="com.struts1.sample.form.LoginForm" scope="session"/>
 <jsp:useBean id="userRegisterForm" class="com.struts1.sample.form.UserRegisterForm" scope="session"/>
+
 <html>
     <head>
         <title>Animated Form Switching with jQuery</title>
