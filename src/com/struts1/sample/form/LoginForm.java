@@ -26,7 +26,6 @@ public class LoginForm extends ActionForm{
 	String email;
 	String phone;
 	
-	
 	List<Employee> empList = new ArrayList<Employee>();
 	
 	public List<Employee> getEmpList() {
