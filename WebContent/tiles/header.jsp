@@ -4,7 +4,7 @@
 	<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>  
 	 <link rel="stylesheet" type="text/css" href="<%=context %>/css/homepagemain.css" />
 	
-	<jsp:useBean id="loginForm" class="com.struts1.sample.form.LoginForm" scope="session"/>
+	<jsp:useBean id="loginForm" class="com.struts1.sample.form.LoginForm" scope="request"/>
 	<c:url var="myLearnlogourl" value="${context}/images/mylearning.png" />
 	  <div id="grailsLogo" style="height:8%;"><a href="${server}"><img src="${myLearnlogourl}" alt="myLearn"/></a></div>
       <div class="nav">

@@ -45,17 +45,15 @@ public class UserLoginAction extends Action{
 			User logedInUser = loginService.doLogin(loginForm.getUserName(), loginForm.getPassword());
 			
 			if(logedInUser!=null && logedInUser.getId()!=null){
-				loginForm.setUserName(logedInUser.getUserName());
-				loginForm.setEmail(logedInUser.getEmail());
 				forward = "success";
+				loginForm.setUserName(logedInUser.getFirstName());
+				EmployeeServiceFactory empService = (EmployeeServiceFactory) context.getBean("empServiceFactory");
+				System.out.println("TxtMsg; "+empService.getTextMessage());
+				loginForm.setEmpList(empService.geEmployeeService().getEmployeeDetails());
 			}else{
 				forward = "failed";
 			}
-			EmployeeServiceFactory empService = (EmployeeServiceFactory) context.getBean("empServiceFactory");
-			System.out.println("TxtMsg; "+empService.getTextMessage());
-			loginForm.setEmpList(empService.geEmployeeService().getEmployeeDetails());
 			return mapping.findForward(forward);
-			
 		}
 
 }

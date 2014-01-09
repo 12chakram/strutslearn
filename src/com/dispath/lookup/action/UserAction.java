@@ -25,8 +25,8 @@ public class UserAction extends LookupDispatchAction {
     /** Provides the mapping from resource key to method name.
      * @return Resource key / method name map.
      */
-    protected Map getKeyMethodMap() {
-      Map map = new HashMap();
+    protected Map<String, String> getKeyMethodMap() {
+      Map<String, String> map = new HashMap<String, String>();
       map.put("UserForm.add", "add");
       map.put("UserForm.update", "update");
       map.put("UserForm.delete", "delete");
