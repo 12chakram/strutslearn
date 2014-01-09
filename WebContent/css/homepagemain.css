@@ -109,7 +109,7 @@ ul {
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
-	margin-top: 43em;
+	margin-top: 45em;
 	padding: 1em;
 	min-height: 1em;
 }
@@ -420,7 +420,7 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 table {
 	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
-	width: 100%;
+	width:73%;
 	margin-bottom: 1em;
 }
 
