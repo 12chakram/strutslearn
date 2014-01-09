@@ -6,8 +6,12 @@
 <hibernate-mapping>
  
     <class name="com.hibernate.pojo.User" table="users">
-        <id name="id" column="user_id">
+         <id name="id" type="long" unsaved-value="null" >
+            <column name="user_id" not-null="true"/>
+              <generator class="identity"/>
         </id>
+        
+        
  		 <property name="firstName" column="user_firstname" />
  		 <property name="lastName" column="user_lastname" /> 
         <property name="userName" column="user_name"/>

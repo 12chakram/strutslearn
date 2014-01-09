@@ -1,9 +1,10 @@
 package com.dao.impl;
 
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.dao.DataIntegrityViolationException;
+import org.hibernate.Transaction;
 
 import cg.hibernate.util.HibernateUtil;
 
@@ -40,7 +41,9 @@ public class UserManagerBean implements UserManager {
 		 user.setMobile(userRegisterForm.getPhone());
 		 
 		 try{
+			 Transaction transaction = session.beginTransaction();
 			 session.save(user);
+			 transaction.commit();
 			 user = getUserByUserNameAndPassword(user.getUserName(),user.getPassword());
 		 }catch(Exception exception){
 			user.setMessage(exception.getLocalizedMessage());

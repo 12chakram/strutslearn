@@ -22,7 +22,8 @@ public class UserLoginAction extends Action{
 	public ActionForward execute(ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response)
 	        throws Exception {
-			String forward = "success";
+		
+		    String forward="";
 			ApplicationContext context;
 			/*String x = null;
 		      x = x.substring(0);*/
@@ -39,13 +40,16 @@ public class UserLoginAction extends Action{
 			request.getSession().setAttribute(Globals.LOCALE_KEY, Locale.FRANCE);
 			System.out.println("Locale 2: "+request.getSession().getAttribute(Globals.LOCALE_KEY));*/
 			
-			UserServiceBean loginService = (UserServiceBean) context.getBean("loginService");
+			UserServiceBean loginService = (UserServiceBean) context.getBean("userService");
 			
 			User logedInUser = loginService.doLogin(loginForm.getUserName(), loginForm.getPassword());
 			
-			if(logedInUser!=null){
+			if(logedInUser!=null && logedInUser.getId()!=null){
 				loginForm.setUserName(logedInUser.getUserName());
 				loginForm.setEmail(logedInUser.getEmail());
+				forward = "success";
+			}else{
+				forward = "failed";
 			}
 			EmployeeServiceFactory empService = (EmployeeServiceFactory) context.getBean("empServiceFactory");
 			System.out.println("TxtMsg; "+empService.getTextMessage());
