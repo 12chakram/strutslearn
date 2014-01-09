@@ -420,8 +420,14 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 table {
 	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
-	width:73%;
+	width:72%;
 	margin-bottom: 1em;
+	border:medium;
+}
+
+table, td, th
+{
+border:1px solid black;
 }
 
 tr {

@@ -3,6 +3,7 @@ package com.struts1.sample;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.struts.Globals;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -46,7 +47,11 @@ public class UserLoginAction extends Action{
 			
 			if(logedInUser!=null && logedInUser.getId()!=null){
 				forward = "success";
-				loginForm.setUserName(logedInUser.getFirstName());
+				String firstName = logedInUser.getFirstName();
+				if(!StringUtils.isBlank(firstName) &&firstName.length()>10){
+				   firstName = logedInUser.getFirstName().substring(0, Math.min(logedInUser.getFirstName().length(), 10));
+				}	
+				  loginForm.setUserName(firstName);
 				EmployeeServiceFactory empService = (EmployeeServiceFactory) context.getBean("empServiceFactory");
 				System.out.println("TxtMsg; "+empService.getTextMessage());
 				loginForm.setEmpList(empService.geEmployeeService().getEmployeeDetails());

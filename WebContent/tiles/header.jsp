@@ -12,7 +12,7 @@
 			         <li><a class="home" href="http://localhost:6060/strutslearn">Home</a></li>
 			         <li style="margin-left:50em;">Welcome:<strong style="text-transform:uppercase;"><c:out value="${loginForm.userName}"></c:out></strong></li>
 			          <li>
-			 			<html:link action="/logout.do" styleClass="to_register" style="margin-left: 3.5em;">Logout</html:link>
+			 			<html:link action="/logout.do" styleClass="to_register" style="margin-left: 2.5em;">Logout</html:link>
 			 		</li>
 			     </ul>    
 		</div>
